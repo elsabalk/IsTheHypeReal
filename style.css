@@ -1,1 +1,30 @@
 /* our style sheet uwu */
+
+header {
+    background-image: url(./Assets/hype44.jpg);
+    background-repeat: no-repeat;
+    background-size: 1200px 800px;
+    background-attachment: fixed;
+    background-position-x: center;
+    
+}
+
+.jumbotron {
+    font-family:'Bangers', cursive;
+    background-color: black;
+   
+    
+}
+
+#description {
+    font-family:'Gudea', sans-serif;
+    margin: 0 30% 0 30%;
+    color: rgb(7, 6, 6);
+    
+}
+
+#title {
+    font-size: 150px;
+    color: aliceblue;
+    text-shadow: 2px 4px 5px black;
+}
