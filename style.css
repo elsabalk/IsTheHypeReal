@@ -1,30 +1,100 @@
 /* our style sheet uwu */
 
+/* Makes sizing of elements easier later/ subject to omission or change*/
+*,
+*::before,
+*::after {
+    box-sizing: content-box;
+}
+
+/* custom properties*/
+:root {
+
+    --ff-primary:'Bangers', cursive;
+    --ff-secondary:'Gudea', sans-serif;
+    --fc-dark:rgb(7, 6, 6);
+    --fc-light:aliceblue;
+    --fc-accent: orange;
+    --bgc-dark:rgb(17, 1, 1);
+    --btnc-red:darkred;
+    }
+
+/* Background-image settings in the header*/
 header {
     background-image: url(./Assets/hype44.jpg);
     background-repeat: no-repeat;
     background-size: 1200px 800px;
     background-attachment: fixed;
     background-position-x: center;
-    
-}
-
-.jumbotron {
-    font-family:'Bangers', cursive;
-    background-color: black;
    
     
 }
-
-#description {
-    font-family:'Gudea', sans-serif;
-    margin: 0 30% 0 30%;
-    color: rgb(7, 6, 6);
-    
+/* Setting the huge title's color, font, size etc*/
+.jumbotron {
+    font-family: var(--ff-primary);
+    background-color: var(--bgc-dark);
+   
 }
 
 #title {
     font-size: 150px;
-    color: aliceblue;
+    color: var(--fc-light);
     text-shadow: 2px 4px 5px black;
 }
+
+/* The blurb to explain what the applet is/ or what the user can use it for*/
+#description {
+    font-family:var(--ff-secondary);
+    margin: 0 30% 0 30%;
+    color: var(--fc-dark);
+    
+}
+
+/* body of search area*/
+body {
+    background-color: var(--bgc-dark);
+
+
+}
+
+/* search bar styling settings*/
+.prompt {
+    font-family: var(--ff-secondary);
+    font-size: 3rem ;
+    color: var(--fc-light);
+    }
+
+#searchField {
+    display: flex;
+    margin: 0 30% 6% 30%;
+}   
+
+.btn{
+color: var(--fc-dark);
+background-color: var(--fc-accent);
+
+}
+
+.btn:hover {
+cursor: pointer;
+background-color: var(--btnc-red);
+color: var(--fc-accent);
+font-size: 15px;
+transition: all .3s ease-in-out;
+}
+
+/* Scrollbar styling*/
+body::-webkit-scrollbar {
+    width: 15px; /* width of the entire scrollbar */
+  }
+  
+body::-webkit-scrollbar-track {
+    background: var(--fc-accent);/* color of the tracking area */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /*shadow*/
+  }
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--btnc-red);/* color of the scroll thumb */
+    border-radius: 30px;/* roundness of the scroll thumb */
+    border: 1px solid ;/* creates padding around scroll thumb */
+  }
