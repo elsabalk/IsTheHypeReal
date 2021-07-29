@@ -12,11 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Gudea&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> <!--custom stylesheet-->
 
+    <!--little icon logo thingy-->
+    <link rel="shortcut icon" type="image/jpg" href="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/1e/48/af/1e48af5d-22f7-7381-99be-a3b519c6c0e5/source/512x512bb.jpg">
+
+    <!--Browser title-->
     <title>Is The Hype Real?</title>
 </head>
 
 <body>
 
+    <!--Big title and description of applet-->
     <header class="jumbotron text-center">
         <h1 id="title">Is The Hype Real?</h1>
         <p id="description">
@@ -24,20 +29,26 @@
         </p>
     </header>
 
-    <section class="searchArea">
-
+    <!--Search Bar-->
+    <section id="searchArea">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                  <h3>Column 1</h3>
-                  <p>Lorem ipsum dolor..</p>
+                <div class="col-md-12 text-center ">
+                  <h3 class="prompt">START HERE!</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group" id="searchField">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                          aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline-primary">search</button>
+                      </div> 
                 </div>
             </div>
         </div>
-
     </section>
-
-
 
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--jQuery library-->
