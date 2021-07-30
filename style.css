@@ -17,15 +17,20 @@
     --fc-accent: orange;
     --bgc-dark:rgb(17, 1, 1);
     --btnc-red:darkred;
+    --bg-repeat: no-repeat;
+    --bg-mtpy: multiply;
+    --bg-size: 1450px 990px;
+    --bg-attch: fixed;
+    --bg-p-x: center;
     }
 
 /* Background-image settings in the header*/
 header {
     background-image: url(./Assets/hype44.jpg);
-    background-repeat: no-repeat;
-    background-size: 1200px 800px;
-    background-attachment: fixed;
-    background-position-x: center;
+    background-repeat: var(--bg-repeat);
+    background-size: var(--bg-size);
+    background-attachment: var(--bg-attch);
+    background-position-x: var(--bg-p-x);
    
     
 }
@@ -47,14 +52,20 @@ header {
     font-family:var(--ff-secondary);
     margin: 0 30% 0 30%;
     color: var(--fc-dark);
-    
+    text-shadow: .5px .5px white;
 }
 
 /* body of search area*/
 body {
-    background-color: var(--bgc-dark);
-
-
+    background-color:rgb(43, 1, 1);
+    background-image: url(./Assets/hype44.jpg);
+    background-repeat: var(--bg-repeat);
+    background-blend-mode: var(--bg-mtpy);
+    background-size: var(--bg-size);
+    background-attachment: var(--bg-attch);
+    background-position-x: var(--bg-p-x);
+    margin: 5px 30px 5px 30px;
+    padding:10px 10px 5px 10px;
 }
 
 /* search bar styling settings*/
@@ -66,13 +77,12 @@ body {
 
 #searchField {
     display: flex;
-    margin: 0 30% 6% 30%;
+    margin: 0 30% 8% 30%;
 }   
 
 .btn{
 color: var(--fc-dark);
 background-color: var(--fc-accent);
-
 }
 
 .btn:hover {
