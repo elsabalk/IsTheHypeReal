@@ -1,4 +1,5 @@
 // Our fanshy scripts :3
+
 var searchBtnEl = document.querySelector(".btn")
 var inputTextboxEl = document.querySelector("#enterMovie")
 var movieList = document.querySelector("li");
@@ -86,3 +87,7 @@ searchBtnEl.addEventListener("click", function(event) {
 
 
 init()
+=======
+
+            
+
