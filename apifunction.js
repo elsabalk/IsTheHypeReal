@@ -1,7 +1,7 @@
-var youtubeRating = document.querySelector('#resultDiv1')
+var youtubeRating = document.querySelector('#rating')
 var omdbRating = document.querySelector('#resultDiv2')
-
-
+var youtubeLikes = document.querySelector('#likes')
+var youtubeDislikes = document.querySelector('#dislikes')
 
 var getMovieName = function() {
     var queryString = document.location.search 
@@ -21,7 +21,7 @@ var accessApi = function(movie) {
 }
 
 function accessYoutubeApi(movie) {
-    var apiUrl = 'https://youtube.googleapis.com/youtube/v3/search?q=' + movie +'trailer&key=AIzaSyBqHkvlD5nsvodOJY9d4qxuLEHUCg0u3zI'
+    var apiUrl = 'https://youtube.googleapis.com/youtube/v3/search?q=' + movie +'trailer&key=AIzaSyBNyaEr1P4aZrdJka0OcVHJA8sbF0Ihh7c'
 
     fetch(apiUrl)
     .then (function (response) {
@@ -29,13 +29,16 @@ function accessYoutubeApi(movie) {
       })
       .then(function (data) {
         var trailer1 = (data.items[0].id.videoId);
-        var likesUrl = 'https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id='+ trailer1 + '&key=AIzaSyBqHkvlD5nsvodOJY9d4qxuLEHUCg0u3zI'
+        var likesUrl = 'https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id='+ trailer1 + '&key=AIzaSyBNyaEr1P4aZrdJka0OcVHJA8sbF0Ihh7c'
         fetch(likesUrl)
         .then (function (response) {
             return response.json();
           })
           .then(function (data) {
-              youtubeRating.textContent = (data.items[0].statistics.likeCount/data.items[0].statistics.dislikeCount).toFixed(2)
+            console.log(data.items[0].statistics.likeCount)
+              youtubeRating.textContent = (data.items[0].statistics.likeCount/data.items[0].statistics.dislikeCount).toFixed(2) + " || Ratio of Likes to Dislikes"
+              youtubeDislikes.textContent = data.items[0].statistics.dislikeCount + " || Dislikes"
+              youtubeLikes.textContent = data.items[0].statistics.likeCount + " || Likes"
               })
       });  
 }
