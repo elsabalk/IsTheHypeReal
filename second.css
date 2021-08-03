@@ -18,8 +18,8 @@
 
 /* Background settings*/
 body {
-    background-color:rgba(43, 1, 1, 0.925);
-    background-image: url(./Assets/hype4.jpg);
+    background-color:rgba(43, 1, 1, 0.801);
+    background-image: url(./Assets/hype6.jpg);
     background-repeat: var(--bg-repeat);
     background-blend-mode: var(--bg-mtpy);
     background-size: 1500px 800px ;
@@ -103,15 +103,39 @@ body {
 }
 
 #resultDiv1 {
-
-/* tbd*/
+    font-family: var(--ff-secondary);
+    font-size: 65px;
+    text-align: center;
+    color: var(--btnc-red);
+    text-shadow: 2px 4px 3px rgb(63, 62, 62);
+    position: relative;
+    top: 100px;
 }
+
 
 #resultDiv2 {
-padding: 0 0 0 40px;
-margin: 30;
+    font-family: var(--ff-secondary);
+    font-size: 65px;
+    text-align: center;
+    color: var(--fc-light);
+    text-shadow: 2px 3px  rgb(0, 0, 0);
+    position: relative;
+    top: 150px;
+    left: 15px;
 }
 
+.imdb {
+
+
+    background-image:url(./Assets/imdb2.png) ;
+    height: 385px;
+    background-repeat: var(--bg-repeat);
+    background-size: 200px 100px;
+    background-position-x: var(--bg-p-x);
+    background-color: var(--btnc-red);
+    border-radius: 20px;
+    
+}
 
 /* Scrollbar styling*/
 body::-webkit-scrollbar {
