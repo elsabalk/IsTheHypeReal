@@ -68,3 +68,4 @@ searchBtnEl.addEventListener("click", function(event) {
 })
 
 getMovieName()
+
