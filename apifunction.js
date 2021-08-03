@@ -5,6 +5,7 @@ var youtubeDislikes = document.querySelector('#dislikes')
 var searchBtnEl = document.querySelector(".btn")
 var inputTextboxEl = document.querySelector("#enterMovie")
 var resultsEl= document.querySelector('#results')
+
 var getMovieName = function() {
     var queryString = document.location.search 
     var movieName = queryString.split('=')[1]
