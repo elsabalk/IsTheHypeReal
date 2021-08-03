@@ -2,7 +2,9 @@ var youtubeRating = document.querySelector('#rating')
 var omdbRating = document.querySelector('#resultDiv2')
 var youtubeLikes = document.querySelector('#likes')
 var youtubeDislikes = document.querySelector('#dislikes')
-
+var searchBtnEl = document.querySelector(".btn")
+var inputTextboxEl = document.querySelector("#enterMovie")
+var resultsEl= document.querySelector('#results')
 var getMovieName = function() {
     var queryString = document.location.search 
     var movieName = queryString.split('=')[1]
@@ -10,6 +12,7 @@ var getMovieName = function() {
     if (movieName) {
 
         accessApi(movieName)
+        resultsEl.textContent = "Results for " + movieName
     } else {
         document.location.replace('./index.html')
     }
@@ -55,5 +58,13 @@ function accessOmdbApi(movie) {
     
   })
 }
+
+searchBtnEl.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var inputFieldText = inputTextboxEl.value.trim();
+  
+  window.location.href = './second.html?movie='+ inputFieldText
+})
 
 getMovieName()
