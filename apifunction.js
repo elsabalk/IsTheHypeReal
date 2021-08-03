@@ -54,3 +54,4 @@ function accessOmdbApi(movie) {
 }
 
 getMovieName()
+
