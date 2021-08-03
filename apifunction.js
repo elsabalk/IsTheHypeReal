@@ -5,6 +5,8 @@ var youtubeDislikes = document.querySelector('#dislikes')
 var searchBtnEl = document.querySelector(".btn")
 var inputTextboxEl = document.querySelector("#enterMovie")
 var resultsEl= document.querySelector('#results')
+var movieArray = [];
+var homePageEl = document.querySelector('#mainPage')
 
 var getMovieName = function() {
     var queryString = document.location.search 
@@ -13,7 +15,7 @@ var getMovieName = function() {
     if (movieName) {
 
         accessApi(movieName)
-        resultsEl.textContent = "Results for " + movieName
+        resultsEl.textContent = "Results for " + decodeURIComponent(movieName)
     } else {
         document.location.replace('./index.html')
     }
@@ -60,13 +62,44 @@ function accessOmdbApi(movie) {
   })
 }
 
+function storeMovieValues() {
+  localStorage.setItem("movies", JSON.stringify(movieArray));
+}
+
+//On page Load
+function init() {
+
+  // Get stored movie list from localStorage
+  var storedMovies = JSON.parse(localStorage.getItem("movies"));
+
+  // If movie was retrieved from localStorage, update the movie array to it
+  if (storedMovies !== null) {
+      movieArray = storedMovies;
+  }
+
+  // Show movies on the DOM
+  //renderMovies();
+}
+
+
 searchBtnEl.addEventListener("click", function(event) {
   event.preventDefault();
+
+  movieArray.push(inputFieldText);
+    
 
   var inputFieldText = inputTextboxEl.value.trim();
   
   window.location.href = './second.html?movie='+ inputFieldText
 })
+
+homePageEl.addEventListener("click", function(event) {
+  event.preventDefault();
+  document.location.replace('./index.html')
+})
+
+
+init()
 
 getMovieName()
 
