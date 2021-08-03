@@ -80,14 +80,14 @@ searchBtnEl.addEventListener("click", function(event) {
     storeMovieValues();
     //renderMovies(); //*****Please help with where should I pin the recents searchs to */
 
-    window.location.href = './second.html';
+    window.location.href = './second.html?movie='+ inputFieldText;
 
 
 });
 
 
 init()
-=======
+
 
             
 
