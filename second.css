@@ -204,8 +204,42 @@ body::-webkit-scrollbar-thumb {
 
     #likes, #dislikes, #rating {
         position: relative;
+        padding: 2px;
     }
+
   }
+
+  
+  /*@media only screen and (max-width: 770px) {
+    #title {
+        font-size: 50px;
+        position: relative;
+        top: 200px;
+    }
+    #search2 {
+        position: absolute;
+        top: 240px;
+        left: 15px;
+
+    }
+    #mainPage{
+        position: relative;
+        top: 250px;
+        padding: 2px;
+    }
+    .prompt{
+        position: relative;
+        top: 200px;
+    }
+    input {
+        position: relative;
+        top: 200px;
+    }
+
+    #resultDiv1 {
+
+    }
+  }*/
 
   @media only screen and (max-width: 570px) {
       .uTube, .imdb{
@@ -238,9 +272,9 @@ body::-webkit-scrollbar-thumb {
 
     #likes, #dislikes, #rating {
         position: relative;
-        right: 20px;
+        right: 2px;
         margin: inherit;
-        font-size: 20px;
+        font-size: 24px;
     }
 
     #results {
