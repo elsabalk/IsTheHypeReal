@@ -108,3 +108,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 30px;/* roundness of the scroll thumb */
     border: 1px solid ;/* creates padding around scroll thumb */
   }
+
+#recentSearch {
+    list-style-type: none;
+
+}
+
+.listStyle {
+    font-family: var(--ff-secondary);
+    font-size: 15px;
+    color: var(--fc-light);
+    }
