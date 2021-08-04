@@ -21,5 +21,5 @@ The film title is entered into the search field on the main page and the returne
 https://elsabalk.github.io/IsTheHypeReal/
 
 ![download (1)](https://user-images.githubusercontent.com/84941752/128249141-e98fc106-e845-4f99-aa28-72eb6c6be963.png)
-![download (2)](https://user-images.githubusercontent.com/84941752/128249147-29c55ac4-db50-4a75-9272-0dd8fddd3532.png)
+![download (3)](https://user-images.githubusercontent.com/84941752/128250938-1834f187-a57a-4936-9177-a667a77f650b.png)
 

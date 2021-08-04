@@ -5,7 +5,6 @@ var youtubeDislikes = document.querySelector('#dislikes')
 var searchBtnEl = document.querySelector(".btn")
 var inputTextboxEl = document.querySelector("#enterMovie")
 var resultsEl= document.querySelector('#results')
-var movieArray = [];
 var homePageEl = document.querySelector('#mainPage')
 
 var getMovieName = function() {
@@ -41,7 +40,6 @@ function accessYoutubeApi(movie) {
             return response.json();
           })
           .then(function (data) {
-            console.log(data.items[0].statistics.likeCount)
               youtubeRating.textContent = (data.items[0].statistics.likeCount/data.items[0].statistics.dislikeCount).toFixed(2) + " || Ratio of Likes to Dislikes"
               youtubeDislikes.textContent = data.items[0].statistics.dislikeCount + " || Dislikes"
               youtubeLikes.textContent = data.items[0].statistics.likeCount + " || Likes"
@@ -50,7 +48,7 @@ function accessYoutubeApi(movie) {
 }
 
 function accessOmdbApi(movie) {
-  var omdbUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=8650ffe7&t=' + movie
+  var omdbUrl = 'https://www.omdbapi.com/?i=tt3896198&apikey=8650ffe7&t=' + movie
 
   fetch(omdbUrl)
   .then (function (response) {
@@ -62,30 +60,11 @@ function accessOmdbApi(movie) {
   })
 }
 
-function storeMovieValues() {
-  localStorage.setItem("movies", JSON.stringify(movieArray));
-}
 
-//On page Load
-function init() {
-
-  // Get stored movie list from localStorage
-  var storedMovies = JSON.parse(localStorage.getItem("movies"));
-
-  // If movie was retrieved from localStorage, update the movie array to it
-  if (storedMovies !== null) {
-      movieArray = storedMovies;
-  }
-
-  // Show movies on the DOM
-  //renderMovies();
-}
 
 
 searchBtnEl.addEventListener("click", function(event) {
   event.preventDefault();
-
-  movieArray.push(inputFieldText);
     
 
   var inputFieldText = inputTextboxEl.value.trim();
@@ -99,7 +78,6 @@ homePageEl.addEventListener("click", function(event) {
 })
 
 
-init()
 
 getMovieName()
 
