@@ -29,14 +29,6 @@ body {
     padding:10px 10px 5px 10px;
 }
  
-/* cut out for now
-.row {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-   }
-*/
-
 /* Big main title settings*/
 #title {
     font-family: var(--ff-primary);
@@ -102,14 +94,31 @@ body {
     text-align: center;
 }
 
-#resultDiv1 {
+#rating {
     font-family: var(--ff-secondary);
-    font-size: 65px;
+    font-size: 30px;
     text-align: center;
     color: var(--btnc-red);
-    text-shadow: 2px 4px 3px rgb(63, 62, 62);
     position: relative;
-    top: 100px;
+    bottom: 260px;
+}
+
+#dislikes {
+    font-family: var(--ff-secondary);
+    font-size: 30px;
+    text-align: center;
+    color: var(--btnc-red);
+    position: relative;
+    bottom: 260px;
+}
+
+#likes {
+    font-family: var(--ff-secondary);
+    font-size: 30px;
+    text-align: center;
+    color: var(--btnc-red);
+    position: relative;
+    bottom: 260px;
 }
 
 
@@ -121,21 +130,35 @@ body {
     text-shadow: 2px 3px  rgb(0, 0, 0);
     position: relative;
     top: 150px;
-    left: 15px;
+    left: 110px;
 }
 
+#resultDiv1 {
+    background-image: url(./Assets/youtube-logo-1-3.png);
+    min-height: 350px;
+    min-width:200px;
+    background-repeat: var(--bg-repeat);
+    background-position-x: var(--bg-p-x);
+    background-size:200px 50px;
+}
 .imdb {
 
-
+    display: flex ;
     background-image:url(./Assets/imdb2.png) ;
-    height: 385px;
+    min-height: 350px;
+    min-width: 250px;
     background-repeat: var(--bg-repeat);
     background-size: 200px 100px;
     background-position-x: var(--bg-p-x);
     background-color: var(--btnc-red);
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
     
 }
+
+.uTube {
+    height: 350px;
+}
+
 
 /* Scrollbar styling*/
 body::-webkit-scrollbar {
@@ -152,3 +175,76 @@ body::-webkit-scrollbar-thumb {
     border-radius: 30px;/* roundness of the scroll thumb */
     border: 1px solid ;/* creates padding around scroll thumb */
   }
+
+
+  /* MEDIA QUERIES*/
+  @media only screen and (max-width: 1200px) {
+      #mainPage {
+          padding-left: 40px;
+      }
+
+
+  }
+
+  @media only screen and (max-width: 990px) {
+
+    #mainPage {
+        padding-left: .5px ;
+        
+    }
+    #resultDiv2 {
+        position: absolute;
+        left: 50px;
+    }
+
+    .imdb, .uTube {
+        position: relative;
+        top: 90px;
+    }
+
+    #likes, #dislikes, #rating {
+        position: relative;
+    }
+  }
+
+  @media only screen and (max-width: 570px) {
+      .uTube, .imdb{
+        border-radius: 20px 20px 0 0;
+        margin: 0 auto;
+      }
+      #hype-column, #results-column{
+        border-radius: 1px;
+    }
+
+    #resultDiv2 {
+        position: absolute;
+        left: 30px;
+    }
+
+    #mainPage {
+        padding-left:140px
+    }
+
+}
+
+@media only screen and (max-width: 390px) {
+    #mainPage {
+        padding-left: 60px;
+    }
+    #resultDiv1 {
+        position: relative;
+        right: 20px;
+    }
+
+    #likes, #dislikes, #rating {
+        position: relative;
+        right: 20px;
+        margin: inherit;
+        font-size: 20px;
+    }
+
+    #results {
+        position: relative;
+        top: 40px;
+    }
+}
